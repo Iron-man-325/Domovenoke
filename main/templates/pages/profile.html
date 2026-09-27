@@ -1,0 +1,69 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/profile.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <div class="head-prof-block">
+                <div class="logo-prof">
+                    {% if profile.avatar %}
+                    <img src="{{ profile.avatar.url }}" class="logo-prof">
+                    {% endif %}
+                </div>
+                <div class="name-block">
+                    <h2 class="username">{{ user.username }}</h2>
+                </div>
+                <div class="div-redact">
+                    <a href="{% url 'redact' %}" style="text-decoration: none;">
+                        <div class="redact-but">
+                            <p class="button-text">Редактировать профиль</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="div-logout">
+                    <a href="{% url 'logout' %}" style="text-decoration: none;">
+                    <form>
+                        <div class="log-out-but">
+                            <p class="button-text">Выйти из аккаунта</p>
+                        </div>
+                        </form>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2 class="username">История просмотра</h2>
+            </div>
+            <div class="flex">
+                {% for apartment in apartments %}
+                {% for history_entry in history %}
+                    {% if apartment.id == history_entry.apartment.id and user.username == history_entry.user.username %}
+                            <div class="his-block">
+                                <img onclick="location.href='{% url 'flat_detail' flat_id=apartment.id %}'" src="{{ apartment.images.first.image.url }}" class="his-img" id="mainImage" alt="Фото квартиры">
+                                <p onclick="location.href='{% url 'flat_detail' flat_id=apartment.id %}'" class="name-history-flat">{{ apartment.name }}</p>
+                                <p onclick="location.href='{% url 'flat_detail' flat_id=apartment.id %}'" class="price-his">{{ apartment.cost_per_night }} ₽</p>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+            </div>
+            <div>
+                <h3 class="username">Ваши квартиры</h3>
+            </div>
+            <div>
+                {% for apartment in myflats %}
+                <div class="flex">
+                    <div class="description-your-flat">
+                        <p class="price">{{ apartment.cost_per_night }} ₽</p>
+                        <h4 class="flat-name">{{ apartment.name }}</h4>
+                        <p class="price">{{ apartment.street }}</p>
+                        <div class="view-but" onclick="location.href='{% url 'stat' flat_id=apartment.id %}'">
+                            <p class="view-text">Подробнее</p>
+                        </div>
+                    </div>
+                    <img class="your-img" src="{{ apartment.images.first.image.url }}" >
+                </div>
+                {% endfor %}
+        </div>
+{% endblock %}

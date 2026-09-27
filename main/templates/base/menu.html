@@ -1,0 +1,23 @@
+<div class="head-2">
+    <div class="name">
+        <a href="{% url 'index' %}">
+        <div class="main-logo"></div>
+        </a>
+    </div>
+    <div class="head">
+        {% for item in menu %}
+        <div class="navigation-text">
+            <a href="{% url item.url_name %}" class="no-underline">
+                <p class="head-navigation-text">{{ item.name }}</p>
+            </a>
+        </div>
+        {% endfor %}
+        <div class="">
+            <a href="{% url 'add_flat' %}">
+                <button class="publish-adv button-text">Разместить объявление</button>
+            </a>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/faq_questions.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <h2 class="faq-head">Часто задаваемые</h2>
+        <h2 class="faq-head">вопросы</h2>
+    </div>
+    <div class="questions">
+
+        <button id="1" class="faq-item">
+          <div class="faq-question">Как купить квартиру?
+            <div id="a1" class="faq-answer">Во вкладке "Главная" выберите нужную вам квартиру, затем на странице выбора квартир нажмите на кнопку "Связатсья с арендодателем". После этого перейдите в свою почту и дождитесь ответа от арендодателя с ключом для аренды. Затем вставьте ключ в соответствующее поле и нажмите на кнопку "Арендовать</div>
+            </div>
+        </button>
+
+    </div>
+    <div class="questions">
+
+        <button id="2" class="faq-item">
+          <div class="faq-question">Как оплатить квартиру?
+            <div id="a2" class="faq-answer">На данный момент на сайте нет возможности произвести оплату. Для оплаты свяжитесь по почте с арендатором и попросите его реквизиты.</div>
+            </div>
+        </button>
+
+    </div>
+    <div class="questions">
+
+        <button id="3" class="faq-item">
+          <div class="faq-question">Как увидеть статистику по заработку?
+            <div id="a3" class="faq-answer">Для того, чтобы увидеть статистику по заработку с квартиры перейдите в раздел "Мои квартиры". При переходе вам будет отображаться ваш общий доход со всех квартир за все время. Для более точной статистики по отдельным квартирам выберите одну квартиру из списка ниже и нажмите на нее.</div>
+            </div>
+        </button>
+
+    </div>
+    <div class="questions">
+
+        <button id="4" class="faq-item">
+          <div class="faq-question">Как добавить квитанции об оплате?",
+            <div id="a4" class="faq-answer">Для того, чтобы добавить квитанции об оплате перейдите в раздел "Квитанции". Заполните интересующие вас поля, и прикрипите фото квитанций.
+</div>
+            </div>
+        </button>
+
+    </div>
+    <div class="questions">
+
+        <button id="5" class="faq-item">
+          <div class="faq-question">Можно ли связаться с администрацией сайта?
+            <div id="a5" class="faq-answer">Да, можно. Для этого перейдите во вкладку "Поддержка". Опишите вашу проблему и при желании прикрипите скриншоты или фото.</div>
+            </div>
+        </button>
+
+    </div>
+</div>
+    <script>
+        'use script'
+
+        document.getElementById('1').addEventListener('click', function(event) {
+        document.getElementById('a1').classList.toggle('show');
+        document.getElementById('1').classList.toggle('expand');
+        });
+        document.getElementById('2').addEventListener ('click', function(event) {
+            document.getElementById('a2').classList.toggle('show');
+            document.getElementById('2').classList.toggle('expand');
+        });
+        document.getElementById('3').addEventListener('click', function(event) {
+            document.getElementById('a3').classList.toggle('show');
+            document.getElementById('3').classList.toggle('expand');
+        });
+        document.getElementById('4').addEventListener('click', function(event) {
+            document.getElementById('a4').classList.toggle('show');
+            document.getElementById('4').classList.toggle('expand');
+        });
+        document.getElementById('5').addEventListener('click', function(event) {
+            document.getElementById('a5').classList.toggle('show');
+            document.getElementById('5').classList.toggle('expand');
+        });
+    </script>
+
+{% endblock %}

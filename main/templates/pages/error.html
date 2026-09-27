@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/error.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="container">
+        <h2 class="head-text">Упс!</h2>
+        <p class="text">У вас нет активной аренды или вы арендуете на короткий срок</p>
+    </div>
+</div>
+{% endblock %}

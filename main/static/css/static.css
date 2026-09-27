@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+body{
+    background-color: rgba(252, 250, 248, 1);
+}
+main{
+    display:flex;
+    justify-content:center;
+}
+.flat-name{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bolder;
+    font-size: 36px;
+    font-style: normal;
+    color: rgba(27, 20, 14, 1);
+}
+.stat-text{
+    color: rgba(133, 115, 96, 1);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+}
+.earn-cont{
+    vertical-align: middle;
+    line-height: 5px;
+    margin: 0 0 0 100px;
+    width: 194px;
+    height: 85px;
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgba(240, 234, 228, 1);
+    border-style: solid;
+    box-shadow: 0px 4px 20px  rgba(0, 0, 0, 0.2);
+}
+.earn-money{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    font-style: normal;
+    color: rgba(27, 20, 14, 1);
+    text-align: center;
+}
+.small-text{
+    color: rgba(133, 115, 96, 1);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    font-style: normal;
+    margin: 10px 0 0 40px;
+}
+.choose-text{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    color: rgba(27, 20, 14, 1);
+}
+.add-text{
+    color: rgba(133, 115, 96, 1);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    margin-right: 100px;
+    text-align: center;
+}
+.last-add-text{
+    color: rgba(133, 115, 96, 1);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    font-style: normal;
+    text-align: center;
+}
+.flat-photo{
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+.stat-cont{
+    margin: 20px 0 0 20px;
+}
+.flex{
+    display: flex;
+}
+.choose-cont{
+    display: flex;
+    margin-top: 20px;
+    width: 960px;
+    height: 70px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid rgba(240, 234, 228, 1);
+}
+
+
+.second-choose{
+    width: 230px;
+    padding-top: 20px;
+    border-top: none;
+    border-right: 2px solid rgba(240, 234, 228, 1);
+    border-left: none;
+    border-bottom:none;
+}
+.add-cont{
+    border-width: 2px;
+    border-color: rgba(240, 234, 228, 1);
+    border-style: solid;
+    border-radius: 12px;
+    width: 722px;
+    height: 58px;
+    display: flex;
+    margin:10px 0 0 10px;
+    vertical-align: middle;
+    line-height: 10px;
+    justify-content: center;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.delete-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+.cancel-btn {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #bdbdbd;
+}
+.hidden {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+.tab-content {
+    visibility: visible;
+    height: auto;
+}
+
+.left-option{
+    width: 220px;
+    height: 53px;
+    background-color: rgba(252, 250, 248, 1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.left-option-chosed{
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 20px;
+    width: 220px;
+    height: 53px;
+    border-radius: 12px;
+    background-color: rgba(240, 234, 228, 1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px  rgba(0, 0, 0, 0.1);
+}
+.top-option{
+    width: 220px;
+    height: 53px;
+    background-color: rgba(252, 250, 248, 1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.top-option-chosed{
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 20px;
+    width: 220px;
+    height: 53px;
+    border-radius: 12px;
+    background-color: rgba(240, 234, 228, 1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0px 2px 20px  rgba(0, 0, 0, 0.1);
+}
+.main-image{
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+.margin{
+    margin-right: 20px;
+}
+.status-head{
+    color: rgba(133, 115, 96, 1);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: normal;
+}
+.status-change{
+    width: 150px;
+    height: 30px;
+    background-color: rgba(232, 131, 48, 1);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px  rgba(0, 0, 0, 0.2);
+}
+.status-select{
+    width: 150px;
+    height: 30px;
+    border-radius: 12px;
+    background-color: rgba(240, 234, 228, 1);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px  rgba(0, 0, 0, 0.2);
+}
+.margin-image{
+    margin-left: 30px;
+}

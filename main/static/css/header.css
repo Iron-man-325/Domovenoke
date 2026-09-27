@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+header {
+    height: 60px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid rgba(243, 237, 231, 1);
+}
+
+.no-underline{
+    text-decoration: none;
+}
+
+.head {
+    display: flex;
+    vertical-align: middle;
+    line-height: 100%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search {
+    width: 256px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: rgba(244, 242, 240, 1);
+    border: none;
+    margin-top: 8px;
+}
+
+.head-navigation-text {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    font-style: normal;
+    color: rgba(27, 20, 14, 1);
+    width: auto;
+}
+
+.name {
+    height: 100%;
+    margin-right: 20%;
+    display: flex;
+}
+
+.navigation-text {
+    margin: 0 20px 0;
+}
+
+.name-only {
+    width: 100px;
+}
+
+.publish-adv {
+    vertical-align: middle;
+    line-height: 1px;
+    width: 205px;
+    height: 40px;
+    background-color: rgba(232, 131, 48, 1);
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px  rgba(0, 0, 0, 0.2);
+}
+
+.button-text {
+    color: rgba(27, 20, 14, 1);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 14px;
+}
+.main-logo{
+    background-image: url(../img/logo.jpg);
+    width: 50px;
+    height: 50px;
+        background-size: cover;
+}
+.head-2 {
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    line-height: 18px;
+
+}
+.logo-prof-head{
+    margin-left: 20px;
+    height: 45px;
+    width: 45px;
+    border-radius: 64px;
+    background-image: url(../img/photo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

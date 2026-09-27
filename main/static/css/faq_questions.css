@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+body{
+    background-color: rgba(252, 250, 248, 1);
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 56px;
+    margin-bottom: 60px;
+}
+
+.faq-head {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+    font-style: normal;
+    color: rgba(27, 20, 14, 1);
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.faq-item {
+    vertical-align: middle;
+    width: 720px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: rgba(240, 234, 228, 1);
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 32px;
+    background-color: rgba(252, 250, 248, 1);
+    transition: max-height 0.2s ease-out;
+    max-height: 90px;
+    min-height: 88px;
+    transition: min-height 0.3s ease-in;
+    box-shadow: 0px 4px 20px  rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16.5px;
+    font-style: normal;
+    color: rgba(133, 115, 96, 1);
+    text-align: left;
+}
+
+.faq-item:hover{
+    cursor: pointer;
+}
+
+.faq-item::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(133, 115, 96, 0.6);
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.faq-answer {
+    display: none;
+}
+
+.faq-item.expand {
+    max-height: 180px;
+    align-items: stretch;
+    transition: max-height 0.2s ease-out;
+}
+
+.faq-item.expand::after{
+    margin-top: 8px;
+    border-top: 5px solid rgba(133, 115, 96, 1);
+}
+
+.faq-answer.show{
+    display: block;
+    margin-top: 14px;
+}

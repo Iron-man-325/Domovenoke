@@ -1,0 +1,33 @@
+{% extends 'base/base_login.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/registration.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+        <div class="container">
+            <div class="create-head">
+                <h2 class="style-text-head">Создание аккаунта</h2>
+            </div>
+            <div class="create-head">
+            <form method="post" >
+                {% csrf_token %}
+                <div class="create">
+                    {{ form.username }}
+                </div>
+                <div class="create">
+                    {{ form.password }}
+                </div>
+                <div class="create">
+                    {{ form.email }}
+                </div>
+                <div class="create">
+                    {{ form.first_name }}
+                </div>
+                <div class="create">
+                    {{ form.last_name }}
+                </div>
+                    <button onclick="location.href='{% url 'profile'  %}'" class="enter-text button-create-ak">Создать аккаунт</button>
+            </form>
+                    </div>
+        </div>
+{% endblock %}

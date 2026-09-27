@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/my_problems.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <h2 class="head-text">Опишите вашу проблему</h2>
+    </div>
+    <div class="tab-container">
+        <button class="underlined-tab">
+            <p class="tab">Ваш запрос</p>
+        </button>
+        <button class="reg-tab">
+            <p class="tab">Мои запросы</p>
+        </button>
+    </div>
+    <div>
+        <input class="desc-inp" placeholder="Опишите вашу проблему">
+    </div>
+    <div class="add-photo">
+        <div class="camera"></div>
+        <div>
+            <p class="text">Добавить фото</p>
+            <p class="color-text">Можно добавлять до 3 фото</p>
+        </div>
+    </div>
+    <button class="button">
+        <p class="but-text">Отправить запрос</p>
+    </button>
+</div>
+{% endblock %}

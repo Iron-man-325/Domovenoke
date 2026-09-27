@@ -1,0 +1,68 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/redact_profile.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div>
+            <div>
+                <h2 class="head-settings-text">Настройки</h2>
+            </div>
+            <form method="post" action="{% url 'redact' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="logo-container">
+                    <div class="col-md-auto logo">
+                        {% if profile.avatar %}
+                        <img src="{{ profile.avatar.url }}" class="logo">
+                        {% endif %}
+                    </div>
+                    <div class="col"></div>
+                    <div class="col-md-auto">
+                        <input type="submit" class="change-logo-button change-logo-text" value="Сменить аватар">
+                    </div>
+                </div>
+                <div>
+                    {{ change_profile_form.avatar }}
+                </div>
+            </form>
+            <form method="post" action="{% url 'redact' %}">
+                {% csrf_token %}
+                <div class="personal-info-container">
+                    <h4 class="personal-info-head-text">Персональная информация</h4>
+                </div>
+                <div>
+                    <p class="personal-info-text">Имя</p>
+                    {{ change_user_form.first_name }}
+                </div>
+                <div>
+                    <p class="personal-info-text">Фамилия</p>
+                    {{ change_user_form.last_name }}
+                </div>
+                <div>
+                    <p class="personal-info-text">Почта</p>
+                    {{ change_user_form.email }}
+                </div>
+                <button class="button-change text-submit" type="submit">Сохранить изменения</button>
+            </form>
+            <div>
+                <h4 class="personal-info-head-text">Пароль</h4>
+            </div>
+            <form method="post" action="{% url 'redact' %}">
+                {% csrf_token %}
+                <div>
+                    <p class="personal-info-text">Ваш пароль</p>
+                    {{ change_password_form.old_password }}
+                </div>
+                <div>
+                    <p class="personal-info-text">Новый пароль</p>
+                    {{ change_password_form.new_password }}
+                </div>
+                <div>
+                    <p class="personal-info-text">Подтвердите новый пароль</p>
+                    {{ change_password_form.confirm }}
+                </div>
+                <button class="button-change text-submit" type="submit">Сменить пароль</button>
+            </form>
+        </div>
+{% endblock %}

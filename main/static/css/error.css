@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+body{
+    background-color: rgba(252, 250, 248, 1);
+}
+.publish-adv{
+    vertical-align: middle;
+    line-height: 1px;
+    width: 205px;
+    height: 40px;
+    background-color: rgba(232, 131, 48, 1);
+    border-radius: 9999px;
+    border: none;
+}
+.button-text{
+    color: rgba(27, 20, 14, 1);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 14px;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    padding-bottom: 100px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 150px;
+}
+.head-text{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0;
+}
+.text{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+    margin: 0;
+}

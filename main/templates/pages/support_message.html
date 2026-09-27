@@ -1,0 +1,134 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/support_message.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <h2 class="head-text">Внесите квитанции</h2>
+    </div>
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="flex">
+        <div>
+            <button class="reg-tab">
+                <h3 class="tab">Вода(горячая)</h3>
+            </button>
+            <div class="width">
+                {{ form.water_hot_input}}
+                {{ form.water_hot_payment}}
+            </div>
+            <div class="add-photo">
+                <div class="camera"></div>
+                <div class="add-block">
+                    <p class="text">Добавьте фото:</p>
+                    <label class="text">Квитанции</label>
+                    {{ form.water_hot_receipt}}
+                    <label class="text">Счетчика</label>
+                    {{ form.water_hot_counter}}
+                </div>
+            </div>
+        </div>
+        <div>
+            <button class="reg-tab">
+                <p class="tab">Вода(холодная)</p>
+            </button>
+            <div class="width">
+                {{ form.water_cold_input}}
+                {{ form.water_cold_payment}}
+            </div>
+            <div class="add-photo">
+                <div class="camera"></div>
+                <div class="add-block">
+                      <p class="text">Добавьте фото:</p>
+                    <label class="text">Квитанции</label>
+                    {{ form.water_cold_receipt}}
+                    <label class="text">Счетчика</label>
+                    {{ form.water_cold_counter}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+        <div>
+        <button class="reg-tab">
+            <p class="tab">Газ</p>
+        </button>
+        <div class="width">
+            {{ form.gas_input}}
+            {{ form.gas_payment}}
+        </div>
+        <div class="add-photo">
+            <div class="camera"></div>
+            <div class="add-block">
+                    <p class="text">Добавьте фото:</p>
+                    <label class="text">Квитанции</label>
+                {{ form.gas_receipt}}
+                <label class="text">Счетчика</label>
+                {{ form.gas_counter}}
+            </div>
+        </div>
+    </div>
+<div>
+            <button class="reg-tab">
+                <p class="tab">Электроэнергия</p>
+            </button>
+            <div class="width">
+                {{ form.electro_input}}
+                {{ form.electro_payment}}
+            </div>
+            <div class="add-photo">
+                <div class="camera"></div>
+                <div class="add-block">
+                    <p class="text">Добавьте фото:</p>
+                    <label class="text">Квитанции</label>
+                    {{ form.electro_receipt}}
+                    <label class="text">Счетчика</label>
+                    {{ form.electro_counter}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+            <div>
+        <button class="reg-tab">
+            <p class="tab">ЖКУ</p>
+        </button>
+        <div class="width">
+            {{ form.GKX_payment}}
+        </div>
+        <div class="add-photo">
+            <div class="camera"></div>
+            <div>
+                <p class="text">Добавьте квитанцию</p>
+                {{ form.GKX_receipt}}
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="reg-tab">
+            <p class="tab">Аренда</p>
+        </button>
+        <div class="width">
+            {{ form.rent_payment}}
+        </div>
+        <div class="add-photo">
+            <div class="camera"></div>
+            <div>
+                <p class="text">Добавьте квитанцию</p>
+                {{ form.rent_receipt}}
+            </div>
+        </div>
+    </div>
+    </div>
+    <button class="button" id="sendRequest" type="submit">
+        <p class="but-text">Отправить Квитанции</p>
+    </button>
+</form>
+</div>
+
+<script>
+</script>
+{% endblock %}

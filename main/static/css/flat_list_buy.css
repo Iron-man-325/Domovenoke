@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+body{
+    background-color: rgba(252, 250, 248, 1);
+}
+main{
+    display:flex;
+    justify-content:center;
+    margin-top: 20px;
+}
+.back-img{
+    width: 928px;
+    height: 480px;
+    background-image: url(../img/Фон_поиска.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+.container{
+    margin-bottom: 20px;
+}
+.text-noto{
+    color: rgba(252, 250, 248, 1);
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 48px;
+    font-weight: 30px;
+    font-style: normal;
+}
+.but-search{
+    margin-top: 10px;
+    margin-right: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(232, 131, 48, 1);
+    border: none;
+    border-radius: 12px;
+    width: 92px;
+    height: 48px;
+    cursor: pointer;
+}
+.search-text{
+    color: rgba(24, 20, 17, 1);
+    font-size: 15px;
+    font-weight: bold;
+}
+.search-input{
+    padding-right: 40px;
+    border: none;
+    border-radius: 12px;
+    width: 324px;
+    height: 64px;
+    flex-grow:2;
+}
+::placeholder {
+    color: rgba(136, 115, 99, 1);
+    padding-left: 10px;
+}
+.search-cont{
+    padding: 25% 0 0 10%;
+}
+.wrapper-1{
+    position: relative;
+    display: inline-block;
+}
+.text{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 22px;
+    font-weight: bold;
+}
+.flat-img{
+    width: 455px;
+    height: 256px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px 0 0 12px;
+    border-style: solid;
+    border-color: rgba(199, 188, 165, 1);
+    cursor:pointer;
+    border-width: 2px;
+} 
+.var-cont{
+    margin-top: 30px;
+    display: flex;
+}
+.desc-text{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    color: rgba(136, 115, 99, 1);
+    margin: 10px 0 0 0;
+    text-decoration: none;
+    cursor:pointer;
+}
+.desc-text-price{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    color: rgba(27, 20, 14, 1);
+    margin: 10px 0 0 0;
+    text-decoration: none;
+    cursor:pointer;
+    font-weight: bold;
+}
+.name-flat{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0 0 0 ;
+    cursor:pointer;
+}
+.desc{
+    width: 300px;
+    margin: 10px 0 0 15px;
+}
+.reserve-but{
+    vertical-align: middle;
+    line-height: 1px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 50px;
+    background-color: rgba(232, 131, 48, 1);
+    border: none;
+    border-radius: 12px;
+    width: 133px;
+    height: 32px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+}
+.desc-cont{
+    height: 256px;
+    display: flex;
+    border-radius: 0 12px 12px 0;
+    border-style: solid;
+    border-color: rgba(199, 188, 165, 1);
+    border-width: 2px;
+    border-left: none;
+    cursor: pointer;
+}
+.reserve-text{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(24, 20, 17, 1);
+}
+.but-div{
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+.text-mod{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.mod-var{
+    width: 200px;
+    margin: 10px 0 0 15px;
+}
+.shadow{
+    display: flex;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px  rgba(0, 0, 0, 0.2);
+}

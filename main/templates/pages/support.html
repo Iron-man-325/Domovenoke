@@ -1,0 +1,100 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/support.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <h2 class="head-text">Опишите вашу проблему</h2>
+    </div>
+    <div>
+        <form id="supportForm" enctype="multipart/form-data">
+    <input class="desc-inp" placeholder="Опишите вашу проблему" id="userMessage" name="message">
+    <div class="add-photo">
+        <div class="camera"></div>
+        <div>
+            <p class="text">Добавить фото</p>
+            <p class="color-text">Можно добавлять до 3 фото</p>
+        </div>
+        <input type="file" id="photoInput" name="photos" accept="image/*" multiple style="margin-top:10px;">
+    </div>
+    <button class="button" type="submit" id="sendRequest">
+        <p class="but-text">Отправить запрос</p>    
+    </button>
+</form>
+<div class="container">
+    <h2 class="head-text">Мои запросы в поддержку</h2>
+
+    {% if requests %}
+        {% for req in requests %}
+            <div class="add-block" >
+                <div  class="flex">
+                                    <div>
+                    <p class="date">{{ req.created_at|date:"d.m.Y H:i" }}</p>
+                    
+
+                    <b class="mes">Сообщение:</b>
+                    <p class="desc">{{ req.message }}</p>
+                </div>
+            
+                {% if req.photos %}
+                    <div class="photo-cont">
+                        <b class="mes">Фото:</b><br>
+                        {% for photo in req.photos %}
+                            <img src="{{ photo.url }}" class="sup-img" onclick="downloadImage(this)" style="cursor: pointer;"   alt="Фото обращения" >
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                </div>
+                </div>
+                </div>
+        {% endfor %}
+    {% else %}
+        <p style="text">У вас пока нет запросов в поддержку.</p>
+    {% endif %}
+<script>
+document.getElementById('supportForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = document.getElementById('supportForm');
+    const formData = new FormData(form);
+
+    // Ограничение на 3 файла
+    const files = document.getElementById('photoInput').files;
+    if (files.length > 3) {
+        alert('Можно добавить не более 3 фото!');
+        return;
+    }
+
+    fetch('/send-support-message/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Сообщение отправлено успешно!');
+            form.reset();
+        } else {
+            alert('Ошибка при отправке сообщения.');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+});
+function downloadImage(imgElement) {
+    const link = document.createElement('a');
+    link.href = imgElement.src;
+    
+    const fileName = imgElement.src.split('/').pop() || 'receipt.jpg';
+    link.download = fileName;
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+</script>
+{% endblock %}
